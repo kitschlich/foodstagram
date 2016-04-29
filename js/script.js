@@ -13,7 +13,7 @@ function getFbRequest(location){
     type: 'place',
     center: '37.76,-122.427', //location
     distance: '1000',
-    access_token: 'CAACEdEose0cBAAwB2xkmyLZBPwbHFKM4yb6fPmHGySfIA9njCwIshDsrLbOKuZBqImQg9CC8zr4n4p8lcG5V4X1r19DhlikHEg3SxzFx9yB9R7SWAX6cvsrPasXZCnDECEY3dyyemYiZCHgwdTfpeZBZAnN4mGanVm6JgZCqPsJaxBT4K04T7C05ZCjcEoAJQoDH18jYjizxZC713fyfI4RdvhkCGpLXiCB8ZD'
+    access_token: '233927430308786|_YCpJw95ivh62Whtfq5rSS7m_Ms'
   };
   url = 'https://graph.facebook.com/search';
 
