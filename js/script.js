@@ -1,13 +1,16 @@
 $(function(){
   
-  $('#search-term').submit(function(event){
+  $('#getLocation').click(function(event){
     event.preventDefault();
-    var searchTerm = $('#query').val();
-    getFbRequest(location);
+    $('.progress').show();
+    navigator.geolocation.getCurrentPosition(function(position) {
+      getFbRequest(position.coords.latitude, position.coords.longitude);
+    });
   });
 });
 
-function getFbRequest(location){
+function getFbRequest(lat, long){
+  var location = lat + "," + long;
   $.ajax({
     type: "GET",
     dataType: "jsonp",
@@ -15,8 +18,8 @@ function getFbRequest(location){
     data: {
       q: 'restaurant',
       type: 'place',
-      center: '37.76,-122.427', //location
-      distance: '1000',
+      center: location,
+      distance: '10000',
       access_token: '233927430308786|_YCpJw95ivh62Whtfq5rSS7m_Ms'
     }
   }).done(function(data){
@@ -64,6 +67,7 @@ function getRecentInsta(instaId) {
 }
 
 function showResults(recentPosts) {
+  $('.progress').hide();
   var image, location;
   $.each(recentPosts.data, function(index, value){
     var tags = value.tags;
@@ -71,7 +75,7 @@ function showResults(recentPosts) {
       if (tags[i-1].indexOf('food') !== -1) {
         image = value.images.standard_resolution.url;
         location = value.location.name;
-        $('#search-results').append('<img src="' + image + '"><p>' + location + '</p>');
+        $('#search-results').append('<div class="row post"><h4 class="col s12">' + location + '</h4><img class="col s12" src="' + image + '"></div>');
         return false;
       }
     }

@@ -1,0 +1,16 @@
+.container {
+	margin-top: 3em;
+	width: 400px;
+}
+
+#search-results {
+	padding-top: 15px;
+}
+
+.progress {
+	display: none;
+}
+
+.post {
+	padding-bottom: 2em;
+}

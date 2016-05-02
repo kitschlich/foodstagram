@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+	 <meta charset="UTF-8">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	 <link rel="stylesheet" href="css/style.css">
+	 <title>Document</title>
+
 </head>
 <body>
-	<form id="search-term" action=""><input type="text"><input type="submit"></form>
-	<div id="search-results"></div>
+	<div class="container">
+		<form id="getLocation" action="#" class="center-align">
+	      <div class="btn">
+		    <span>Show me local eats!</span>
+		   </div>
+  		</form>
+		<div id="search-results" class="row">
+			<div class="progress">
+      			<div class="indeterminate"></div>
+  			</div>
+		</div>
+	</div>
 	<script src="https://code.jquery.com/jquery-git2.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
